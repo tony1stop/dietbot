@@ -20,12 +20,49 @@
                 <option value="female">Female</option>
             </select><br>
         
-            <label for="weight">Weight (kg):</label>
+            <!-- Unit Selection -->
+            <label for="unitSystem">Unit System:</label>
+            <select id="unitSystem" required>
+                <option value="metric">Metric (kg, cm)</option>
+                <option value="imperial">Imperial (lbs, ft/in)</option>
+            </select><br>
+        
+            <!-- Weight Input -->
+            <label for="weight">Weight:</label>
             <input type="number" id="weight" required><br>
         
-            <label for="height">Height (cm):</label>
-            <input type="number" id="height" required><br>
+            <!-- Height Input (Metric) -->
+            <div id="heightMetric">
+                <label for="heightCm">Height (cm):</label>
+                <input type="number" id="heightCm" required><br>
+            </div>
         
+            <!-- Height Input (Imperial) -->
+            <div id="heightImperial" style="display: none;">
+                <label for="heightFeet">Height (ft/in):</label>
+                <select id="heightFeet">
+                    <option value="4">4'</option>
+                    <option value="5">5'</option>
+                    <option value="6">6'</option>
+                    <option value="7">7'</option>
+                </select>
+                <select id="heightInches">
+                    <option value="0">0"</option>
+                    <option value="1">1"</option>
+                    <option value="2">2"</option>
+                    <option value="3">3"</option>
+                    <option value="4">4"</option>
+                    <option value="5">5"</option>
+                    <option value="6">6"</option>
+                    <option value="7">7"</option>
+                    <option value="8">8"</option>
+                    <option value="9">9"</option>
+                    <option value="10">10"</option>
+                    <option value="11">11"</option>
+                </select><br>
+            </div>
+        
+            <!-- Activity Level -->
             <label for="activity">Activity Level:</label>
             <select id="activity" required>
                 <option value="sedentary">Sedentary</option>
@@ -34,6 +71,7 @@
                 <option value="active">Very Active</option>
             </select><br>
         
+            <!-- Goal -->
             <label for="goal">Goal:</label>
             <select id="goal" required>
                 <option value="loss">Weight Loss</option>
@@ -41,31 +79,45 @@
                 <option value="gain">Weight Gain</option>
             </select><br>
         
+            <!-- Dietary Preference -->
             <label for="diet">Dietary Preference:</label>
             <select id="diet" required>
                 <option value="vegetarian">Vegetarian</option>
                 <option value="vegan">Vegan</option>
-                <option value="high-protein">High Protein</option>
                 <option value="gluten-free">Gluten-Free</option>
             </select><br>
         
-            <!-- New fields -->
-            <label for="days">Number of Days (1-30):</label>
-            <input type="number" id="days" min="1" max="30" required><br>
-        
+            <!-- Meals per Day -->
             <label for="mealsPerDay">Meals per Day:</label>
-            <input type="number" id="mealsPerDay" min="1" max="6" required><br>
+            <select id="mealsPerDay" required>
+                <option value="2">2 Meals</option>
+                <option value="3">3 Meals</option>
+                <option value="4">4 Meals</option>
+                <option value="5">5 Meals</option>
+                <option value="6">6 Meals</option>
+            </select><br>
         
-            <label for="workoutTime">Workout Time (optional):</label>
-            <input type="time" id="workoutTime"><br>
+            <!-- Workout Time -->
+            <label for="workoutTime">Workout Time:</label>
+            <select id="workoutTime">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+                <option value="lateNight">Late Night</option>
+            </select><br>
         
+            <!-- Workout Preference -->
             <label for="workoutPreference">Workout Preference:</label>
             <select id="workoutPreference">
-                <option value="normal">Normal (No special requirements)</option>
-                <option value="carbsBefore">Carbs Before Workout</option>
-                <option value="carbsAfter">Carbs After Workout</option>
-                <option value="fasted">Fasted Workout</option>
+                <option value="fuelWorkout">Fuel My Workout (Carbs Before & After)</option>
+                <option value="recoverStrong">Recover Strong (Carbs After)</option>
+                <option value="burnFat">Burn Fat Faster (Fasted Workout)</option>
+                <option value="keepSimple">Keep It Simple (No Adjustments)</option>
             </select><br>
+        
+            <!-- Number of Days -->
+            <label for="days">Number of Days (1-30):</label>
+            <input type="number" id="days" min="1" max="30" required><br>
         
             <button type="submit">Generate Meal Plan</button>
         </form>
